@@ -16,7 +16,7 @@ const Signup = () => {
     setError("");
 
     try {
-      const response = await axios.post("http://localhost:5000/api/signup", {
+      const response = await axios.post("https://quizzo-backend-8aht.onrender.com/api/signup", {
         username,
         password,
       });

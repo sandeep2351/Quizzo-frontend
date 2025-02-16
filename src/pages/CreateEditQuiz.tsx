@@ -40,7 +40,7 @@ const CreateEditQuiz = () => {
       setIsEditing(true);
       setLoading(true);
       axios
-        .get(`http://localhost:5000/api/quizzes/${id}`)
+        .get(`https://quizzo-backend-8aht.onrender.com/api/quizzes/${id}`)
         .then((response) => {
           setValue("title", response.data.title);
           setValue("description", response.data.description);
@@ -56,10 +56,10 @@ const CreateEditQuiz = () => {
     setLoading(true);
     try {
       if (isEditing) {
-        await axios.put(`http://localhost:5000/api/quizzes/${id}`, data);
+        await axios.put(`https://quizzo-backend-8aht.onrender.com/api/quizzes/${id}`, data);
         toast.success("Quiz updated successfully!");
       } else {
-        await axios.post("http://localhost:5000/api/quizzes", {
+        await axios.post("https://quizzo-backend-8aht.onrender.com/api/quizzes", {
           ...data,
           createdAt: new Date().toISOString(),
         });

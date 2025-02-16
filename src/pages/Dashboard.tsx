@@ -26,7 +26,7 @@ const Dashboard = () => {
 
   const fetchQuizzes = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/quizzes");
+      const response = await axios.get("https://quizzo-backend-8aht.onrender.com/api/quizzes");
       setQuizzes(response.data);
     } catch {
       toast.error("Failed to load quizzes.");
@@ -38,7 +38,7 @@ const Dashboard = () => {
   const handleDelete = async (id: number) => {
     setLoading(true);
     try {
-      await axios.delete(`http://localhost:5000/api/quizzes/${id}`);
+      await axios.delete(`https://quizzo-backend-8aht.onrender.com/api/quizzes/${id}`);
       setQuizzes(quizzes.filter((quiz) => quiz.id !== id));
       toast.success("Quiz deleted successfully!");
     } catch {
